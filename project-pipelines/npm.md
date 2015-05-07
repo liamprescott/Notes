@@ -20,6 +20,8 @@ Using npm instead of an additional task runner e.g. Grunt or Gulp.
 - JavaScript
   - https://www.npmjs.com/package/uglify-js
   - https://www.npmjs.com/package/jshint
+- Sass
+  - [See Sass](sass.md)
 - CSS
   - https://www.npmjs.com/package/autoprefixer
   - https://www.npmjs.com/package/cssmin

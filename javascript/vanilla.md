@@ -1,5 +1,7 @@
 #Vanilla Javascript
-Up and away from jQuery
+Up, up, up and away from jQuery.
+
+See: http://toddmotto.com/is-it-time-to-drop-jquery-essentials-to-learning-javascript-from-a-jquery-background/ for original article.
 
 ##DOM Selection
 
@@ -81,28 +83,129 @@ div.classList.add('myClass');
 div.classList.add("foo","bar"); //add multiple classes
 ```
 
+
 ###Remove class
 ```javascript
 var div = document.querySelector('div');
-div.classlist.remove('myClass');
+div.classList.remove('myClass');
 ```
+
 
 ###Toggle class
 ```javascript
 var div = document.querySelector('div');
-div.classlist.toggle('myClass');
+div.classList.toggle('myClass');
 ```
+
 
 ###Contains class
 ```javascript
 var div = document.querySelector('div');
 console.log(div.classlist.contains('myClass'));
 ```
-
 Support: ie.10 see: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList for polyfill
 
 
+## Array itteration
+
+Replacing jQuery's ```$.each(myArray, function(i){ //.... });``` and ```$('').each(function(i){ //.... });```
+
+
+###Array.prototype.forEach
+See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+```javascript
+// Chain onto array
+['a', 'b', 'c', 'd'].forEach(function(element, index, array){
+  // ...
+});
+
+// Or
+var myArray = ['a', 'b', 'c', 'd'];
+myArray.forEach(function(element, index, array){
+  // ...
+});
+
+//Note: Empty members are not visited
+```
+Support: ie.9
+
+
+###Traditional Array looping and closure
+```javascript
+var myArray = ['a', 'b', 'c', 'd'],
+    l = myArray.length,
+    i;
+for (i=0; i<l; i++) {
+  (function(index){
+    // The scope of i is now captured via index param if need to use 'later' in event handlers e.g.
+    myArray[index].addEventListener('click', function(index){console.log(index);}, false);
+  })(i);
+}
+```
+
+
+###NodeList looping
+To loop requires a traditional for loop.
+See: https://developer.mozilla.org/en/docs/Web/API/NodeList
+```javascript
+// Add a class to every Node in the NodeList
+var elements = document.querySelectorAll('.element'); //Or document.getElementsByClassName('element');
+for (var i = 0; i < elements.length; i++) {
+  elements[i].classList.add('myClass');
+}
+```
+
+
+##Attributes getting, setting and removing
+
+```javascript
+console.log(document.querySelector('.myClass').getAttribute('data-abcd'));
+document.querySelector('.myClass').setAttribute('data-abcd', 'my data string');
+document.querySelector('myClass').removeAttribute('disabled');
+```
+
+###Boolean attributes
+There are 2 'correct' ways of setting Boolean attributes:
+1. Via ```setAttribute``` with an empty string value
+2. Via element properties ```element.attribute = ``` which is probably(?) *cleaner*
+
+```javascript
+document.querySelector('.myClass').setAttribute('disabled', ''); // Correct
+document.querySelector('.myClass').disabled = true; // Cleaner(?)
+```
+
+
+##JSON Parsing
+```javascript
+<div class="element" data-info='{ "name" : "abc", "id" : "123" }'></div>
+
+var data = JSON.parse(document.querySelector('.element').getAttribute('data-info'));
+console.log(data.name);
+console.log(data.id);
+```
+
+##CSS manipulation
+Done via HTMLElement.style.
+
+See: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
+```javascript
+element.style.color = "ff00ff";  // Directly
+//Or
+var st = element.style;
+st.color = "#00ff00";  // Indirectly
+```
+
+##Document ready event
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+    // DOM is now ready....
+    console.log('...hello');
+}, false);
+```
+Support: ie.9
 
 ####Links
-- http://toddmotto.com/is-it-time-to-drop-jquery-essentials-to-learning-javascript-from-a-jquery-background/
 - a
+- b
