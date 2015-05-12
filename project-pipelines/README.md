@@ -1,6 +1,6 @@
 #Project Setup
 
-Notes, references and thoughts about improving front-end development workflows and processes: This is a test
+Notes, references and thoughts about improving front-end development workflows and processes:
 
 ##Topics
 - [Ruby](ruby.md)
