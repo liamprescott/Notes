@@ -1,14 +1,14 @@
 #Project Setup
 
-Notes, references and thoughts about improving front-end development workflows and processes:
+Notes, references and thoughts about improving front-end development workflows and processes: This is a test
 
 ##Topics
 - [Ruby](ruby.md)
     - Installing Ruby
-    - Links 
+    - Links
 - [Sass](sass.md)
     - Using Sass
-        - Why use Grunt? 
+        - Why use Grunt?
     - Installing Sass
     - Links
 - [Nodejs](nodejs.md)
@@ -22,5 +22,3 @@ Notes, references and thoughts about improving front-end development workflows a
 
 #Links
 - http://dosprompt.info/
-
-
