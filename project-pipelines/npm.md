@@ -24,4 +24,17 @@ Using npm instead of an additional task runner e.g. Grunt or Gulp.
   - [See Sass](sass.md)
 - CSS
   - https://www.npmjs.com/package/autoprefixer
+    - https://www.npmjs.com/package/caniuse-db
+    - https://github.com/Fyrd/caniuse
+    - https://github.com/ai/browserslist
   - https://www.npmjs.com/package/cssmin
+
+####Package Notes
+
+######Autoprefixer
+Uses the caniuse database and browserslist (for the query)
+
+**To update caniuse database**
+```
+npm update caniuse-db
+```
