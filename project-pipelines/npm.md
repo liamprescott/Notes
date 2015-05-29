@@ -11,10 +11,19 @@ Node package manager
 Using npm instead of an additional task runner e.g. Grunt or Gulp.
 
 
+###Windows command prompt syntax
+- **&&** for chaining tasks
+- **&** for running tasks simaltaneously
+- **<** for inputting the contents (stdin) of a file to a command
+- **>** or redirecting output (stdout) of a command and dumping it to a file
+- **|** for redirecting output (stdout) of a command and sending it to another command
+
+###Version bumping
+run ```npm version patch``` see https://docs.npmjs.com/cli/version for more info on types of levels
+
 ###Links
 - http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
 - http://blog.modulus.io/using-npm-scripts-to-build-asset-pipeline
--
 
 ####Packages
 - JavaScript
