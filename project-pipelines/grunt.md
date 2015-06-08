@@ -62,6 +62,9 @@ This is Grunt's command line interface. Installed globally so that it doesn't ne
 
 ##Installing Grunt plugins
 
+LibSass
+- To install with grunt-sass see: https://github.com/sindresorhus/grunt-sass
+
 ##Links
 - http://gruntjs.com/
 - Intro Guides

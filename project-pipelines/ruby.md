@@ -1,8 +1,11 @@
 #Ruby
 
-The underlying programming language on which the other platforms and frameworks run.
+Ruby is the underlying platform / programming language upon which other platforms and frameworks run.
 
-Ruby is required to install / run the **ruby version of Sass** (there is an alternative Nodejs version).
+## Is Ruby needed?
+Primarily Ruby is required in order to use the native version of Sass and some Sass libraries e.g. Compass.
+
+If using LibSass (C/C++ version) of Sass then it's probably not needed.
 
 ##Installing Ruby
 1. Download the latest version from http://rubyinstaller.org/downloads/.

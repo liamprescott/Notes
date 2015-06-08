@@ -1,17 +1,17 @@
 #Sass
 
-A CSS preprocessor extension language that runs on Ruby.
+A CSS preprocessor extension language that runs either **natively** on Ruby or as a C/C++ port called **LibSass** via .
 
 ##Using Sass
 Sass is authored using any text based editor.
 
-It is  configured and run via either:
-- The  command line
+It is configured and run via:
+- The command line
 - Third party applications
-- A task runner workflow e.g. Grunt, Gulp or npm (native)
+- A task runner workflow e.g. Grunt, Gulp or npm
 
 ####Why use a task runner?
-The main benefit of using a task runner is that it makes usage easier, simplifies the configuration process and naturally form part of a wider task runner based workflow.
+The main benefit of using a task runner is that it makes usage easier, simplifies the configuration process and allows it to be used as part of a wider build workflow.
 
 ##Flavours of Sass
 There are two options when it comes to running Sass:
@@ -38,17 +38,27 @@ To  check the version number type:
   sass -v
   ```
 
+## LibSass
+LibSass is a C/C++ port of Sass. LibSass is just a library. To run requires an implementer e.g:
+- [SassC](https://github.com/sass/sassc), a CLI wrapper for several operating systems.
+- [Node-sass](https://github.com/sass/node-sass), a library that provides binding for Node.js to libsass.
 
-## libsass
-libsass is the C version of Sass. There are a number of ways of using libsass. The one focused on here is Node-sass, a library that provides binding for Node.js to libsass.
+Initally we'll focus on using Node-sass.
 
+##### Advantages
+- Speed, speed, speed! Compile speed is much faster.
+- Doesn't require Ruby
 
-###Installing a libsass and Node-sass / Grunt-sass setup
-1. To install with Node-Sass (which installs libsass requirements):
+##### Disadvantages
+- Feature support. But this is becoming less of an issue as the two versions converge. see http://sass-compatibility.github.io/
+- Vendor library support. e.g. Compass. There may be some issues.
+
+###Installing Node-sass (and LibSass)
+To install with Node-Sass (which installs LibSass requirements):
 see: https://github.com/sass/node-sass
   - Navigate to project directory (in command prompt)
   - Type ```npm install node-sass```. This installs the package to the local project only
-2. To install with grunt-sass see: https://github.com/sindresorhus/grunt-sass
+
 
 
 ###Links
@@ -74,5 +84,8 @@ see: https://github.com/sass/node-sass
   - http://benfrain.com/lightning-fast-sass-compiling-with-libsass-node-sass-and-grunt-sass/
   - http://www.sitepoint.com/switching-ruby-sass-libsass/
   - http://dannyenglander.com/blog/libsass-grunt-do-you-feel-need-for-speed
+  - [Compatibility](http://sass-compatibility.github.io/)
   - Node:
     - https://www.gitbook.com/book/anotheruiguy/nodeexpreslibsass_from-scratch/details
+- Visual Studio support
+  - http://www.hanselman.com/blog/IntroducingGulpGruntBowerAndNpmSupportForVisualStudio.aspx
