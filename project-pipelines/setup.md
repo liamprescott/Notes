@@ -193,7 +193,14 @@ Watch the file system for changes to files and trigger tasks to run automaticall
 ```javascript
 //...
 "scripts": {
-  //...
+  "clean:css": "rimraf style/css/**.*",
+  "compile:css:dev": "npm run compile:css:main -- --source-map true --output-style expanded",
+  "compile:css:main": "node-sass style/scss/main.scss style/css/main.css",
+  "css:prefix": "postcss --use autoprefixer -c postcss-options.json -o style/css/main.css style/css/main.css",
+  "build:css": "npm run compile:css:dev && npm run css:prefix",
+  "livereload": "live-reload style/css --port 9091 --delay 1s",
+  "watch:sass": "nodemon -e scss -w style/scss -x \"npm run build:css\"",
+  "dev": "parallelshell \"npm run livereload\" \"npm run watch:sass\""
 }
 //...
 ```
