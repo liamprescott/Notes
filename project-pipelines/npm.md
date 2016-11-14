@@ -5,7 +5,7 @@ Using the **Node Package Manager**.
 - npm packages can be installed locally (within a project) or globally.
 - To install globally add the ```-g``` flag e.g. ```npm install <MODULE NAME> -g```
 - Global installation is required for 'easy' CLI access
-- For CLI access of a locally installed package simply add reference with relative path to ```node_module\.bin``` e.g. on Windows: ```node_modules\.bin\<MODULE NAME> --help``` or on Mac: ```./node_modules/.bin/cssmin --help```. see: https://lostechies.com/derickbailey/2012/04/24/executing-a-project-specific-nodenpm-package-a-la-bundle-exec/
+- For CLI access of a locally installed package simply add reference with relative path to ```node_module\.bin``` e.g. on Windows: ```node_modules/.bin/<MODULE NAME> --help``` or on Mac: ```./node_modules/.bin/cssmin --help```. see: https://lostechies.com/derickbailey/2012/04/24/executing-a-project-specific-nodenpm-package-a-la-bundle-exec/
 
 ## Using npm as an asset pipeline / build tool.
 npm can be used instead of an additional task runner e.g. Grunt or Gulp to create asset build workflows.
